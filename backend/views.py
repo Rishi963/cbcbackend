@@ -24,7 +24,7 @@ class StudentregView(viewsets.ModelViewSet):
     queryset = Studentreg.objects.all()
     serializer_class = StudentregSerializer
     permission_classes = [permissions.AllowAny]
-    filterset_fields = ['student_id','batch','branch','course','status']
+    filterset_fields = ['student_id','batch','branch','course','status','std_name']
 
 class CourseView(viewsets.ModelViewSet):
     queryset = Course.objects.all()
@@ -45,7 +45,7 @@ class BillingView(viewsets.ModelViewSet):
     queryset = Billingdata.objects.all()
     serializer_class = BillingSerializer
     permission_classes = [permissions.AllowAny]
-    filterset_fields = ['student_id',]
+    filterset_fields = ['student_id','std_name','date','status']
 
 #
 class RegisterAPI(generics.GenericAPIView):

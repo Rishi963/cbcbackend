@@ -48,6 +48,18 @@ class Studentreg(models.Model):
     studend_image = models.ImageField(blank=True)
     status = models.CharField(max_length=100,blank=True)
 
+    reference = models.CharField(max_length=300,blank=True)
+    after_scholorship = models.DecimalField(max_digits=8, decimal_places=2,blank=True)
+    scholorship_amount = models.DecimalField(max_digits=8, decimal_places=2,blank=True)
+    fee_paid = models.DecimalField(max_digits=8, decimal_places=2,blank=True)
+    remainig_fee = models.DecimalField(max_digits=8, decimal_places=2,blank=True)
+    std_name = models.CharField(blank=True,max_length=900)
+
+
+
+
+
+
 
 
     
@@ -65,8 +77,10 @@ class Reference(models.Model):
 
 class Billingdata(models.Model):
     student_id = models.CharField(max_length=500,blank=True)
+    std_name = models.CharField(blank=True,max_length=900)
     bill_no = models.CharField(max_length=300,blank=True)
     date = models.DateField(blank=True)
+    status = models.CharField(blank=True,max_length=500)
     amount = models.DecimalField(max_digits=8, decimal_places=2,blank=True)
     
 
